@@ -15,12 +15,9 @@
         <p>{{ $pizzas[$i]['type'] }}</p>
         @endfor --}}
 
-        @foreach($pizzas as $pizza)
-        <div>
-        {{$loop->index}}    {{$pizza['type']}} - {{$pizza['base']}}
-        @if($loop->first)
-        <span> first in the loop </span>
-        @endif
-        </div>
+        @foreach($lifts as $lift)
+            <div>
+                {{ $lift->name }} - {{ $lift->catagory}} - {{$lift->bodypart}} - {{$lift->liftName}}
+            </div>
         @endforeach
 @endsection

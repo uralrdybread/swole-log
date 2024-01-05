@@ -3,5 +3,5 @@
     
     
     @section('content')
-    <h1>Swole-Log</h1>
+    <img src="/img/swolelog.png" alt="pizza house logo">
     @endsection

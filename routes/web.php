@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LiftController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/lifts', function () {
+Route::get('/lifts',  [LiftController::class, 'index']);
 
-    $pizzas = [
-        ['type' => 'hawauuab', 'base' => 'cheesy crust'],
-        ['type' => 'volcano', 'base' => 'garlic crust'],
-        ['type' => 'veg supreme', 'base' => 'thin and crispy']
-    ];
+Route::get('/lifts/{id}', [LiftController::class, 'show']);
 
-    return view('lifts', ['pizzas' => $pizzas]);
-});
+
