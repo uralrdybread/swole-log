@@ -12,12 +12,19 @@ class LiftController extends Controller
         $lifts = Lift::all();
 
 
-        return view('lifts', [
+        return view('lifts.index', [
             'lifts' => $lifts,
         ]);
     }
 
     public function show($id) {
-        return view('details', ['id' => $id]);
+
+        $lift = Lift::findOrFail($id);
+
+        return view('lifts.show', ['lift' => $lift]);
+    }
+
+    public function create(){
+        return view('lifts.create');
     }
 }

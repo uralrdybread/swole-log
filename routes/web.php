@@ -18,6 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/lifts/create', [LiftController::class, 'create']);
+
 Route::get('/lifts',  [LiftController::class, 'index']);
 
 Route::get('/lifts/{id}', [LiftController::class, 'show']);
